@@ -1,7 +1,7 @@
 HashiCorp Vault AMI Build Specification
 =======================================
 
-This repository contains resources and configuration scripts for building a custom [HashiCorp Vault][HashiCorp Vault] 
+This repository contains resources and configuration scripts for building a custom [HashiCorp Vault][HashiCorp Vault]
 [AMI][AWS AMI] with [HashiCorp Packer][HashiCorp Packer].
 
 **Check out the AMI's [user guide](doc/USER_GUIDE.md) for more information.**
@@ -20,7 +20,8 @@ To use build this AMI, the following will be needed:
 
 - [Packer][Installing Packer] version 1.8.0 or later installed
 - An [AWS account][AWS portal]
-- [Local environment variables for your AWS account][AWS local env variables setup]
+- [Local environment variables for your AWS account][AWS local env variables setup], such as `AWS_ACCESS_KEY_ID`
+    * [How do I get AWS_ACCESS_KEY_ID for Amazon?](https://stackoverflow.com/a/21443349/14312712)
 
 Clone the repository.
 
@@ -44,7 +45,7 @@ ssh-keygen -t rsa -C "your_email@example.com" -f ./hashicorp-vault
 ```
 
 The command above generates a new SSH key called `hashicorp-vault`. The argument provided with the `-f` flag creates the
-key in the current directory and creates two files called `hashicorp-vault` and `hashicorp-vault.pub`. Change the 
+key in the current directory and creates two files called `hashicorp-vault` and `hashicorp-vault.pub`. Change the
 placeholder email address accordingly if needed.
 
 When prompted, press enter to leave the passphrase blank on this key.
@@ -65,11 +66,17 @@ By default, the Makefile chooses the most recent Vault binary to build the AMI
 The default instance type to build this AMI does not qualify for the AWS free tier. You are charged for any instances
 created when building this AMI.
 
-## ⚖️ License Summary
 
-This sample code is made available under a modified MIT license. See the [LICENSE file](./LICENSE).
+License
+-------
+
+The use and distribution terms for [HashiCorp Vault AMI]() are covered by the
+[Apache License, Version 2.0][Apache License, Version 2.0].
+
+![](https://github.com/QubitPi/QubitPi/blob/master/img/apache-2.png?raw=true)
 
 
+[Apache License, Version 2.0]: http://www.apache.org/licenses/LICENSE-2.0.html
 [Authentication]: https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials
 [AWS local env variables setup]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html#envvars-set
 [AWS AMI]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
@@ -82,4 +89,4 @@ This sample code is made available under a modified MIT license. See the [LICENS
 
 [Installing Packer]: https://developer.hashicorp.com/packer/tutorials/docker-get-started/get-started-install-cli
 
-[Local environment variables for your AWS account][AWS local env variables setup].
+[AWS local env variables setup]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html#envvars-set
