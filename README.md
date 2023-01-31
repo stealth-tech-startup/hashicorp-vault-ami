@@ -18,10 +18,9 @@ already have an HCP account and you want to launch an HCP Vault cluster on your 
 
 To use build this AMI, the following will be needed:
 
-- [Packer][HashiCorp Packer] version 1.8.0 or later installed. For more information, see
-   [Installing Packer][Installing Packer] in the Packer documentation.
+- [Packer][Installing Packer] version 1.8.0 or later installed
 - An [AWS account][AWS portal]
-- [Local environment variables for your AWS account][AWS local env variables setup].
+- [Local environment variables for your AWS account][AWS local env variables setup]
 
 Clone the repository.
 
