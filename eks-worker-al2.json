@@ -112,6 +112,17 @@
   ],
   "provisioners": [
     {
+        "type": "shell",
+        "remote_folder": "{{ user `remote_folder`}}",
+        "script": "{{template_dir}}/scripts/install-vault.sh"
+    },
+    {
+        "type": "file",
+        "source": "{{template_dir}}/files/config.hcl",
+        "destination": "/tmp/config/"
+    },
+
+    {
       "type": "shell",
       "remote_folder": "{{ user `remote_folder`}}",
       "script": "{{template_dir}}/scripts/install_additional_repos.sh",
